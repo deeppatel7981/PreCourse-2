@@ -1,4 +1,8 @@
-class LinkedList 
+// Time Complexity : O(n) -> number of nodes in Linked List.
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Couldn't find the problem
+// Any problem you faced while coding this : No (Watched online explanations)
+class LinkedList
 { 
     Node head; // head of linked list 
   
@@ -19,7 +23,17 @@ class LinkedList
     void printMiddle() 
     { 
         //Write your code here
-	//Implement using Fast and slow pointers
+	    //Implement using Fast and slow pointers
+        Node slow = head;
+        Node fast = head;
+
+        // Find the middle node using the fast and the slow pointers
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        System.out.println("Middle element in the singly linked list is "+slow.data);
     } 
   
     public void push(int new_data) 
